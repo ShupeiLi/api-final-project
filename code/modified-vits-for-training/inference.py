@@ -38,9 +38,9 @@ net_g = SynthesizerTrn(
     **hps.model).cuda()
 _ = net_g.eval()
 
-_ = utils.load_checkpoint("../train_store/G_5000.pth", net_g, None)
+_ = utils.load_checkpoint("./G_96000.pth", net_g, None)
 
-stn_tst = get_text("这是一个测试。我爱计算机科学！", hps)
+stn_tst = get_text("我爱计算机科学！", hps)
 with torch.no_grad():
     x_tst = stn_tst.cuda().unsqueeze(0)
     x_tst_lengths = torch.LongTensor([stn_tst.size(0)]).cuda()
@@ -52,5 +52,5 @@ with torch.no_grad():
         0, 0].data.cpu().float().numpy()
 
 sampling_rate = 48000
-wavfile.write('./data/test_G5000.wav', sampling_rate, audio)
+wavfile.write('./G_96000.wav', sampling_rate, audio)
 # ipd.display(ipd.Audio(audio, rate=hps.data.sampling_rate, normalize=False))
