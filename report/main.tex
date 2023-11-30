@@ -1,175 +1,147 @@
-%%
-%% This is file `sample-acmsmall-conf.tex',
-%% generated with the docstrip utility.
-%%
-%% The original source files were:
-%%
-%% samples.dtx  (with options: `acmsmall-conf')
-%% 
-%% IMPORTANT NOTICE:
-%% 
-%% For the copyright see the source file.
-%% 
-%% Any modified versions of this file must be renamed
-%% with new filenames distinct from sample-acmsmall-conf.tex.
-%% 
-%% For distribution of the original source see the terms
-%% for copying and modification in the file samples.dtx.
-%% 
-%% This generated file may be distributed as long as the
-%% original source files, as listed above, are part of the
-%% same distribution. (The sources need not necessarily be
-%% in the same archive or directory.)
-%%
-%%
-%% Commands for TeXCount
-%TC:macro \cite [option:text,text]
-%TC:macro \citep [option:text,text]
-%TC:macro \citet [option:text,text]
-%TC:envir table 0 1
-%TC:envir table* 0 1
-%TC:envir tabular [ignore] word
-%TC:envir displaymath 0 word
-%TC:envir math 0 word
-%TC:envir comment 0 0
-%%
-%%
-%% The first command in your LaTeX source must be the \documentclass
-%% command.
-%%
-%% For submission and review of your manuscript please change the
-%% command to \documentclass[manuscript, screen, review]{acmart}.
-%%
-%% When submitting camera ready or to TAPS, please change the command
-%% to \documentclass[sigconf]{acmart} or whichever template is required
-%% for your publication.
-%%
-%%
-\documentclass[acmsmall]{acmart}
+\documentclass{article}
 
-%%
-%% \BibTeX command to typeset BibTeX logo in the docs
-\AtBeginDocument{%
-  \providecommand\BibTeX{{%
-    Bib\TeX}}}
 
-%% Rights management information.  This information is sent to you
-%% when you complete the rights form.  These commands have SAMPLE
-%% values in them; it is your responsibility as an author to replace
-%% the commands and values with those provided to you when you
-%% complete the rights form.
-%\setcopyright{acmcopyright}
-%\copyrightyear{2018}
-%\acmYear{2018}
-%\acmDOI{XXXXXXX.XXXXXXX}
+\usepackage{arxiv}
 
-%% These commands are for a PROCEEDINGS abstract or paper.
-\acmConference[API'23, Master CS]{}{Fall 2023}{Leiden, the Netherlands}
-%%
-%%  Uncomment \acmBooktitle if the title of the proceedings is different
-%%  from ``Proceedings of ...''!
-%%
-%%\acmBooktitle{Woodstock '18: ACM Symposium on Neural Gaze Detection,
-%%  June 03--05, 2018, Woodstock, NY}
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{lipsum}
+\usepackage{siunitx}
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{cite}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\graphicspath{ {./img/} }
 
-%%
-%% For managing citations, it is recommended to use bibliography
-%% files in BibTeX format.
-%%
-%% You can then either use BibTeX with the ACM-Reference-Format style,
-%% or BibLaTeX with the acmnumeric or acmauthoryear sytles, that include
-%% support for advanced citation of software artefact from the
-%% biblatex-software package, also separately available on CTAN.
-%%
-%% Look at the sample-*-biblatex.tex files for templates showcasing
-%% the biblatex styles.
-%%
+\newcommand{\note}[1]{\textbf{#1}}
 
-%%
-%% The majority of ACM publications use numbered citations and
-%% references.  The command \citestyle{authoryear} switches to the
-%% "author year" style.
-%%
-%% If you are preparing content for an event
-%% sponsored by ACM SIGGRAPH, you must use the "author year" style of
-%% citations and references.
-%% Uncommenting
-%% the next command will enable that style.
-%%\citestyle{acmauthoryear}
+\title{Towards a Customizable Text-to-speech Personal Assistant}
 
-\usepackage{subcaption}
 
-%%
-%% end of the preamble, start of the body of the document source.
-\begin{document}
-
-%%
-%% The "title" command has an optional parameter,
-%% allowing the author to define a "short title" to be used in page headers.
-\title[TTS Personal Assistant]{Towards a Customizable Text-to-speech Personal Assistant}
-%%
-%% The "author" command and its associated commands are used to define
-%% the authors and their affiliations.
-%% Of note is the shared affiliation of the first two authors, and the
-%% "authornote" and "authornotemark" commands
-%% used to denote shared contribution to the research.
-\author{Chenyu Shi}
-\author{Siwen Tu}
-\author{Shuang Fan}
-\author{Shupei Li}
-
-\affiliation{%
-  \institution{LIACS}
-  \country{Leiden University}
+\author{
+ Chenyu Shi\\
+   s3500063\\
+   \And
+ Siwen Tu\\
+   s3631400\\
+   \And
+ Shuang Fan \\
+   s3505847\\
+   \And
+ Shupei Li \\
+   s3430863\\
 }
 
-%%
-%% By default, the full list of authors will be used in the page
-%% headers. Often, this list is too long, and will overlap
-%% other information printed in the page headers. This command allows
-%% the author to define a more concise list
-%% of authors' names for this purpose.
-\renewcommand{\shortauthors}{C. Shi, S. Tu, S. Fan, and S. Li}
 
-%%
-%% The abstract is a short summary of the work to be presented in the
-%% article.
+\begin{document}
+\maketitle
 \begin{abstract}
-    \textbf{Abstract}. TBC
+TBC.
 \end{abstract}
 
-%%
-%% The code below is generated by the tool at http://dl.acm.org/ccs.cfm.
-%% Please copy and paste the code instead of the example below.
-%%
 
-%%
-%% Keywords. The author(s) should pick words that accurately describe
-%% the work being presented. Separate the keywords with commas.
-\keywords{VITS; TTS; Deep Learning}
+\keywords{VITS \and TTS \and Deep Learning}
 
-%%
-%% This command processes the author and affiliation and title
-%% information and builds the first part of the formatted document.
-\maketitle
 
-\section{Introduction}
+\section{Introduction}\label{sec:intro}
+
 
 \section{Methodology}
+\label{sec:method}
+
+We describe VITS \cite{2021kim}, the backbone of our TTS assistant, from the perspective of variational inference in detail. We also introduce VITS's architecture and training process to provide a comprehensive overview.
+
+\subsection{CVAEs}
+The variational autoencoder (VAE), proposed in \cite{2022kingma}, is a popular approach widely used in unsupervised learning. It is an effective function approximator and can be optimized by the standard stochastic gradient descent (SGD) method. It has shown promising application value in various fields, such as complex pattern recognition, segmentation, future prediction from static images, etc \cite{2021doersch}.
+
+Conditional variational autoencoders (CVAEs) are variants of VAEs. Remember that VAEs learn posterior distribution parameters from dataset $x$ without any label information. In CVAEs, we have additional contextual information $c$ when estimating the posterior distribution. The objective function of the CVAE can be written as follows:
+\begin{align}
+    \max\quad \log p_{\theta}\left(x|c\right) &- \mathcal{D}\left[q_{\phi} \left(z|x\right)\Vert p_{\theta}\left(z|x \right) \right] 
+    \label{eq:objective-function}
+\end{align}
+where $p_\theta(x|c)$ denotes the marginal log-likelihood of the data, $p_\theta(z|x)$ is the posterior distribution and $q_\phi(z|x)$ is its approximator. According to the definition of Kullback-Leibler divergence and Bayes' theorem, maximizing Equation \ref{eq:objective-function} is equivalent to maximizing the following equation:
+\begin{align}
+    \max\quad \mathbb{E}_{q_{\phi}(z \mid x)}\left[\log p_{\theta}(x \mid z)-\log \frac{q_{\phi}(z \mid x)}{p_{\theta}(z \mid c)}\right]
+    \label{eq:objective-function-equal}
+\end{align}
+Notice that the relative KL divergence is always a non-negative number. We can derive the evidence lower bound (ELBO) of the objective function based on Equation \ref{eq:objective-function} and Equation \ref{eq:objective-function-equal}:
+\begin{align}
+    \begin{split}
+        \log p_{\theta}(x \mid c) &\geq \mathbb{E}_{q_{\phi}(z \mid x)}\left[\log p_{\theta}(x \mid z)-\log \frac{q_{\phi}(z \mid x)}{p_{\theta}(z \mid c)}\right]\\
+                                  &= \underbrace{\mathbb{E}_{q_{\phi}(z|x)}\left[\log p_{\theta}\left(x|z \right)\right]}_{\text{Reconstruction loss}} - \underbrace{\mathcal{D}\left[q_{\phi}(z \mid x) \Vert p_{\theta}(z \mid c) \right]}_{\text{Regularization loss}}
+    \end{split}
+    \label{eq:elbo}
+\end{align}
+The ELBO comprises two parts --- the reconstruction loss and the regularization loss. The reconstruction loss describes the data distribution given the latent space, while the regularization loss measures the divergence between the true prior distribution and the encoder's approximate distribution. In practice, we usually choose to minimize the negative ELBO because the term $\mathcal{D}\left[q_{\phi} \left(z|x\right)\Vert p_{\theta}\left(z|x \right) \right]$ is hard to calculate. However, a reasonable posterior approximator $q_\phi(z|x)$ can effectively alleviate the impact of the bias.
+
+\subsection{Expressing VITS as a CVAE}
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=0.95\textwidth]{vits.png}
+    \end{center}
+    \caption{The architecture of VITS. This figure is directly adapted from \cite{2021kim}.}
+    \label{fig:method-vits}
+\end{figure}
+
+The architecture of VITS is shown in Figure \ref{fig:method-vits}. VITS model can be expressed as a CVAE. We will illustrate the main idea behind VITS based on the reconstruction loss as well as the regularization loss.
+
+\textbf{Reconstruction Loss}. During the training, we have ground truth soundtracks $x$ and their corresponding text $c_{text}$. Kim et al. \cite{2021kim} define the reconstruction loss as the $L_1$ norm between the input's mel-spectrogram and the estimated mel-spectrogram produced by the model:
+\begin{align}
+    L_{recon} = \Vert x_{mel} - \hat{x}_{mel} \Vert_1
+\end{align}
+It is easy to compute the mel-spectrogram $x_{mel}$ of a specific audio file. As for the approximate mel-spectrogram $\hat{x}_{mel}$, we can upsample the latent space to the waveform domain and then transform it to the mel-spectrogram domain.
+
+\textbf{Regularization Loss}. The text-to-speech task requires an automatic alignment between the text input and the corresponding voice features. VITS adopts the monotonic alignment search algorithm to align the audio and textual embeddings. The monotonic alignment search algorithm (MAS) is proposed in \cite{2020kim}. The intuition behind the MAS is applying the dynamic programming algorithm to maximize the likelihood of the data distribution. It will produce an alignment matrix $A$. The condition $c$ in VITS is defined as the concatenation of the text input $c_{text}$ and the alignment matrix $A$, i.e., $c = [c_{text}, A]$. Given the condition $c$, we can calculate the regularization loss following the definition of KL-divergence:
+\begin{align}
+    \begin{split}
+        L_{kl} = \mathcal{D}\left[q_{\phi}(z \mid x) \Vert p_{\theta}(z \mid c) \right]&=\log q_{\phi}\left(z \mid x_{l i n}\right)-\log p_{\theta}\left(z \mid c_{\text {text }}, A\right) \\
+        z \sim q_{\phi}\left(z \mid x_{l i n}\right)&=N\left(z ; \mu_{\phi}\left(x_{l i n}\right), \sigma_{\phi}\left(x_{l i n}\right)\right)
+    \end{split}
+\end{align}
+It is worth mentioning that VITS uses the linear-scale spectrogram of the soundtrack $x_{lin}$ instead of the mel-spectrogram. \cite{2021kim} explains that the linear-scale spectrogram is helpful in enhancing the resolution of generated audio. To improve the model's performance further, VITS introduces a normalizing flow $f_\theta$ that connects the conditional prior distribution and the latent space in the following way:
+\begin{align}
+    p_{\theta}(z \mid c) & =N\left(f_{\theta}(z) ; \mu_{\theta}(c), \sigma_{\theta}(c)\right)\left|\operatorname{det} \frac{\partial f_{\theta}(z)}{\partial z}\right| 
+    \label{eq:normalizing-flow}
+\end{align}
+Equation \ref{eq:normalizing-flow} transforms the latent space into some complex distributions that possess a more powerful expressiveness, which is critical for generating realistic outputs.
+
+\subsection{Training VITS}
+The major part of VITS is a CVAE. However, there are more things to consider when handling the text-to-speech task. Firstly, we need to decide the duration of each token in outputs. A straightforward idea is adding a deterministic duration predictor into the model. But this naive method has a big flaw --- it can not reflect the features of different speakers, which limits the model's application in multi-speaker scenarios. Alternatively, VITS designs a stochastic duration preditor whose loss function is $L_{dur}$ and optimizes it with other modules during training.
+
+VITS also integrates adversarial training into the architecture to guide the optimization direction. With a discriminator $D$ and a decoder $G$, VITS combines two kinds of loss in the adversarial training, namely the least-squares loss and the additional feature-matching loss:
+\begin{align}
+    \begin{split}
+        L_{a d v}(D) & =\mathbb{E}_{(y, z)}\left[(D(y)-1)^{2}+(D(G(z)))^{2}\right] \\
+        L_{a d v}(G) & =\mathbb{E}_{z}\left[(D(G(z))-1)^{2}\right] \\
+        L_{f m}(G) & =\mathbb{E}_{(y, z)}\left[\sum_{l=1}^{T} \frac{1}{N_{l}}\left\|D^{l}(y)-D^{l}(G(z))\right\|_{1}\right]
+    \end{split}
+\end{align}
+
+Taken together, we can obtain the final loss for VITS training:
+\begin{align}
+    L_{v a e}=L_{r e c o n}+L_{k l}+L_{d u r}+L_{a d v}(G)+L_{f m}(G)
+\end{align}
+
+During the inference stage, we fix all weights and disgard the posterior encoder because we only have the text input. Final outputs are produced by the decoder $G$.
 
 \section{Experiments}
+\label{sec:exper}
 
 \section{Conclusion}
+\label{sec:con}
 
-%%
-%% The next two lines define the bibliography style to be used, and
-%% the bibliography file.
-\bibliographystyle{ACM-Reference-Format}
-\bibliography{main}
 
-%%
-%% If your work has an appendix, this is the place to put it.
+
+\bibliographystyle{unsrt}  
+\bibliography{references} 
+
 \end{document}
-\endinput
-%%
-%% End of file `sample-acmsmall-conf.tex'.
