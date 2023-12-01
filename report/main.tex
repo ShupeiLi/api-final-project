@@ -45,7 +45,7 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-TBC.
+The audio assistant technology has been widely applied based on the high development of the deep learning field. In this project, we have used deep learning models to accomplish a customizable text-to-speech personal audio assistant. We trained the neural networks on audio datasets, and fine-tune them on different languages of multi speakers. The final model can produce realistic audio based on input texts, and users can customize the type of languages or speakers according to their choice.
 \end{abstract}
 
 
@@ -53,8 +53,9 @@ TBC.
 
 
 \section{Introduction}\label{sec:intro}
+With the rapid development of the deep learning field, the audio assistant technology has achieved great success and been widely applied in our daily life. Most of audio assistants are realized by text-to-speech models. In this project, we accomplished a customizable text-to-speech personal audio assistant based on VITS \cite{2021kim}, an efficient text-to-speech model with high performance. We trained the model on audio datasets, and fine-tune it on Mandarin and Japanese to test the performance of the model on different languages. Besides, we also fine-tune it on multiple types of speakers to fulfill the requirement of customization. The final model achieves great performance, which can produce realistic audio from text, and the users can make their choice on different languages and types of speakers.
 
-
+The rest of the reports will be presented in three chapters. In chapter 2,  we will show and explain the methodology used in the models. In chapter 3, the experiment results will be displayed and discussed. And in chapter 4, we will have a conclusion of the report and project.
 \section{Methodology}
 \label{sec:method}
 
@@ -137,6 +138,7 @@ During the inference stage, we fix all weights and disgard the posterior encoder
 \label{sec:exper}
 
 \section{Conclusion}
+To conclude, we have built a customizable text-to-speech personal audio assistant based on the VITS model and fine-tune it to achieve optimal performance. Although there still exist some problems, such as equivalent performance. For example, audios from some kind of speaker are of higher quality than others. But overally speaking, the model has achieved the goal and performs well as a personal audio assistant.
 \label{sec:con}
 
 
