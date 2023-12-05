@@ -45,21 +45,24 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-The audio assistant technology has been widely applied based on the high development of the deep learning field. In this project, we have used deep learning models to accomplish a customizable text-to-speech personal audio assistant. We trained the neural networks on audio datasets, and fine-tune them on different languages of multi speakers. The final model can produce realistic audio based on input texts, and users can customize the type of languages or speakers according to their choice.
+The audio assistant technology has been widely applied based on the high development of the deep learning field. In this project, we use deep learning models to accomplish a customizable text-to-speech personal voice assistant. Its main features are twofold --- multi-language support and multi-speaker support. We trained the neural networks on audio datasets and fine-tuned them in different languages with multi-speaker settings. The final model can produce realistic audio based on input texts, and users can customize the type of languages or speaker identities according to their personal preferences.
 \end{abstract}
 
 
 \keywords{VITS \and TTS \and Deep Learning}
 
 
-\section{Introduction}\label{sec:intro}
-With the rapid development of the deep learning field, text-to-speech techniques are widely applied in our daily lives. For example, they are used in audio book reading, voice guidance in navigation systems, and human-machine interfaces. One of the most important applications is the voice assistant, such as Siri on the iPhone or Cortana on Windows. These voice assistants can provide help and advice in a speech format, which is more convenient and acceptable than text for humans.
+\section{Introduction}
+\label{sec:intro}
 
-There are many languages spoken in the world, and people prefer voice assistants to use a familiar language. Additionally, individuals have varying preferences for the type of voice used by the assistants, favoring human-like voices over a cold mechanical sound. Hence, customizing voice assistants is a promising direction for this technology.
+With the rapid development of the deep learning field, text-to-speech techniques are widely applied in our daily lives. For example, they are used in audiobook reading, voice guidance in navigation systems, and human-machine interfaces. One of the most important applications is the voice assistant, such as Siri on the iPhone or Cortana on Windows. These voice assistants can provide help and advice in a speech format, which is more convenient and acceptable than text for humans.
 
-In this project, we utilize the VITS model \cite{2021kim} to design and implement a customizable text-to-speech personal voice assistant. VITS is a deep learning model for the text-to-speech task based on a conditional variational autoencoder. Our main contributions are as follows. Firstly, we train the VITS model from scratch to evaluate its performance on the text-to-speech task. In addition, we fine-tune the model based on a pre-trained one in different languages, with a primary focus on Mandarin and Japanese. Moreover, we fine-tune the model on various types of speakers, employing five types of voices of speakers for training in our project. The final result is a personal voice assistant that allows users to select their preferred languages and types of voices. Through training and evaluation in the experiment, our final model can produce realistic audio based on the input text data, serving as an effective customizable text-to-speech voice assistant.
+Many languages are spoken worldwide, and people prefer voice assistants to use a familiar language. Additionally, individuals have varying preferences for the type of voice the assistants use, favoring human-like voices over a cold mechanical sound. Hence, customizing voice assistants is a promising direction for this technology.
 
-The rest of the reports will be presented in three chapters. In chapter 2,  we will show and explain the methodology used in the models. In chapter 3, the experiment results will be displayed and discussed. And in chapter 4, we will have a conclusion of the report and project.
+In this project, we utilize the VITS model \cite{2021kim} to design and implement a customizable text-to-speech personal voice assistant. VITS is a deep learning model for the text-to-speech task based on a conditional variational autoencoder. Our main contributions are as follows. Firstly, we train the VITS model from scratch in Chinese to achieve the multi-language objective since the original VITS implementation was designed for English. In addition, we fine-tune the model based on pre-trained weights in different languages, with a primary focus on Mandarin and Japanese. It further improves the voice assistant's capability --- better output resolution and more language support. Moreover, we fine-tune the model on various types of speakers to complete the goal of multi-speaker. We added five new speakers for Chinese and six for Japanese. The final result is a personal voice assistant that allows users to select their preferred languages and voice types. Through training and evaluation in the experiment, our final model can produce realistic audio based on the input text data, serving as an effective customizable text-to-speech voice assistant.
+
+The rest of the reports will be presented in three sections. In Section \ref{sec:method},  we will show and explain the methodology used in the models. In Section \ref{sec:exper}, the experiment results will be displayed and discussed. And in Section \ref{sec:con}, we will have a conclusion of the report and project.
+
 \section{Methodology}
 \label{sec:method}
 
@@ -142,11 +145,10 @@ During the inference stage, we fix all weights and disgard the posterior encoder
 \label{sec:exper}
 
 \section{Conclusion}
-To conclude, we have built a customizable text-to-speech personal audio assistant based on the VITS model and fine-tuned it to achieve optimal performance. Our final model can produce realistic audio based on the content of the input text. Additionally, users can select their preferred languages and types of voices. The model finally works with great performance and efficiency as a personal voice assistant.
-
-For our model, there are several aspects that could potentially be improved in the future. First of all, the number of languages and types of voices in our model is currently limited. However, increasing the supported languages and speakers does not pose significant challenges for the model. We just need to repeat each step in our experiment with a new audio dataset of a new language or speaker to expand our model. Additionally, the model does not perform equally well on all types of voices and languages in our experiment. To address this issue, we could find and use higher-quality audio datasets for training and fine-tune the model with increased computing resources.
 \label{sec:con}
+To conclude, we have built a customizable text-to-speech personal audio assistant based on the VITS model and fine-tuned it to achieve optimal performance. Our final model can produce realistic audio based on the content of the input text. Additionally, users can select their preferred languages and types of voices. The model finally works with satisfying performance and efficiency as a personal voice assistant.
 
+For our model, there are several aspects that could potentially be improved in the future. First of all, the number of languages and types of voices in our model is currently limited. However, increasing the supported languages and speakers does not pose significant challenges for the model, considering the existence of the large open-source text-to-speech community. We just need to repeat each step in our experiment with a new audio dataset of a new language or speaker to extend our model. Additionally, the model does not perform equally well on all types of voices and languages in our experiment. To address this issue, we could find and use higher-quality audio datasets for training and fine-tuning the model with increased computing resources.
 
 
 \bibliographystyle{unsrt}  
