@@ -27,7 +27,7 @@ Seminar Audio Processing and Indexing, 2023 Fall, Leiden University
 ## Reproduce the Training Process
 1. Install the necessary packages.
    ```sh
-   cd api-final-project/code/modified-vits-for-training/
+   cd api-final-project/code/modified-vits-for-training
    pip install -r requirements.txt
    ```
 2. Install `espeak`.
@@ -64,7 +64,7 @@ Seminar Audio Processing and Indexing, 2023 Fall, Leiden University
    ```sh
    python VC_inference.py --model_dir ./G_latest.pth --share True --config_dir CONFIG_FILEPATH
    ```
-   You can also directly use our model weights and configurations for this step. **If so, you don't need to download the dataset and the preprocessed text file.**\
+   You can also directly use our model weights and configurations for this step. **If so, you don't need to download the datasets.**\
    Download our model weights and configurations from Google Drive:
    - Chinese: [link](https://drive.google.com/drive/folders/1VANyQ2oi2NfIrWJAVhJzqeLWkm6tnuBP)
    - Japanese: [link](https://drive.google.com/drive/folders/11SZBcahzmsGT6l20S0UR9KW2SXGiEtmx)
