@@ -13,6 +13,7 @@
 \usepackage{microtype}      % microtypography
 \usepackage{lipsum}
 \usepackage{siunitx}
+\usepackage{hyperref}
 \usepackage[linesnumbered,ruled,vlined]{algorithm2e}
 \usepackage{float}
 \usepackage{amsmath}
@@ -143,6 +144,60 @@ During the inference stage, we fix all weights and disgard the posterior encoder
 
 \section{Experiments}
 \label{sec:exper}
+The hardware and software we use in the experiment are listed below. Our official project website is \href{https://sd12321sd.github.io/api_project.github.io/}. The code of our project is available on \href{ https://github.com/ShupeiLi/api-final-project/tree/master}.
+
+\textbf{Hardware}:
+\begin{itemize}
+    \item 1 Titan Xp GPU
+\end{itemize}
+\textbf{Software}:
+\begin{minipage}{0.45\textwidth}
+    \begin{itemize}
+        \item Cython==0.29.21
+        \item librosa==0.8.0
+        \item matplotlib==3.3.1
+        \item numpy==1.18.5
+        \item phonemizer==2.2.1
+        \item scipy==1.5.2
+        \item tensorboard==2.3.0
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+    \begin{itemize}
+        \item torch==1.6.0
+        \item torchvision==0.7.0
+        \item Unidecode==1.1.1
+    \item chardet
+    \item pypinyin
+    \item monotonic\_align
+    \item protobuf==3.20.0
+    \end{itemize}
+\end{minipage}
+\subsection{Training from Scratch}
+To validate the effectiveness of the VITS model, we train the model on the Chinese Standard Mandarin Speech Corpus and record the performance of different training phases.  
+\paragraph{Preprocessing}
+Due to the distinctive structure of Chinese characters and their relationship with pronunciation, which differs significantly from English, we need to preprocess the raw data containing audio and Chinese text to better align with the training process. We convert Chinese text into representations using the International Phonetic Alphabet (IPA). We establish mappings for Latin to Bopomofo symbols (a phonetic script used in Mandarin Chinese transliteration and writing systems), Bopomofo symbols to Romaji, and Bopomofo symbols to IPA. This involves leveraging external libraries such as \textit{pypinyin}, \textit{jieba}, and \textit{cn2an} to convert Arabic numerals, Latin characters, and Chinese characters into Bopomofo symbols. Additionally, various regular expressions are employed to locate and replace specific elements in the Chinese text. These procedures aim to optimize the data for the training process, facilitating the establishment of a model that captures the relationship between audio and Chinese text.
+\paragraph{Experiment Setting}
+We train the model for around 96,000 steps, lasting about 48 hours. We record the performance of 0 step, 5,000 steps, 10,000 steps, 30,000 steps, 50,000 steps, 70,000 steps and 96,000 steps to demonstrate a remarkable improvement, which is shown on our project website.
+
+
+
+\paragraph{Dataset} Chinese Standard Mandarin Speech\footnote{https://www.data-baker.com/open\_source.html}. This dataset consists of 10000 sentences which are spoken by a Chinese female who pronounces standard Mandarin. The average length of the sentences is around 16 characters and the audio is recorded at 48kHz 16-bit sampling frequency, in PCM WAV format. The transcribed text of the audio is recorded as a txt file.
+
+
+\subsection{Fine-tune the Model}
+To build a versatile model capable of handling multiple languages and speakers, we perform fine-tuning on the model using separate datasets for Chinese and Japanese speakers. The customized text-to-speech personal assistant, developed through this process, is showcased on our project website.
+\paragraph{Preprocessing}
+A bit different from the preprocessing of the Chinese dataset, we also built a pipeline for converting the Japanese text to IPA. We build mappings for Romaji to IPA, consonant to their representations. We utilize the \textit{pyopenjtalk} library to convert the Japanese text to Romaji with the accent, and then we deal with some special consonants and convert the Romaji to IPA.
+\paragraph{Experiment Setting}
+Based on the model trained in section 3.1, we fine-tune the model for around 84,500 steps, which lasts for about 16 hours. We provide five different speakers including child, middle-aged female, middle-aged male, young female and young male speakers for Chinese. Additionally, we include six speakers for the Japanese language, spanning child, young female, young male, middle-aged female, middle-aged male, and aged male voices. The outcomes of this training process are showcased on our project website.
+
+\textbf{Chinese Dataset}: AISHELL-3 for Chinese~\cite{AISHELL-3_2020}. This dataset is a large-scale multi-speaker Mandarin speech corpus provided by Beijing Shell Shell Technology Co., Ltd. The corpus contains roughly 88000 utterances which are spoken by 218 native Chinese Mandarin speakers. These speakers have different genders, ages, and accents which are marked in the corpus.
+
+\textbf{Japanese Dataset}: JVS corpus~\cite{takamichi2019jvs}. This dataset consists of Japanese transcripts and multi-speaker audio data. These audio files are recorded by 100 professional speakers who are of different gender and age. The audio is sampled at 24 kHz and the average duration is 10 seconds. For each speaker, they provide 100 different recordings.
+
+
 
 \section{Conclusion}
 \label{sec:con}
